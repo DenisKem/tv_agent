@@ -12,6 +12,7 @@ class Service::Tv
 
   def stop_current
     Process.kill('INT', @vlc_pid) if @vlc_pid
+    @vlc_pid = nil
   end
 
   private
