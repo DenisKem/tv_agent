@@ -1,1 +1,6 @@
-%h1 Hello, world! From haml
+%h1 TV Channel list
+
+%ol
+  - @channels.each do |channel|
+    %li= channel[:name]
+    
