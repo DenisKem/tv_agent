@@ -1,6 +1,10 @@
 %h1 TV Channel list
 
 %ol
-  - @channels.each do |channel|
-    %li= channel[:name]
+  - @channels.each do |name, _|
+    %li
+      = name
+      %form{method: :post, action: "/tv/on"}
+        %input{type: :hidden, name: :next_channel, value: name}
+        %button ON
     
