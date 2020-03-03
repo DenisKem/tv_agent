@@ -13,6 +13,11 @@ end
 post "/tv/on" do
   tv.switch_to(params[:next_channel])
   
-  @channels = channels_list.channels
-  haml :home
+  redirect to("/")
+end
+
+post "/tv/off" do
+  tv.stop_current
+
+  redirect to("/")
 end

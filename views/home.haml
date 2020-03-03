@@ -1,5 +1,8 @@
 %h1 TV Channel list
 
+%form{method: :post, action: "/tv/off"}
+  %button OFF
+
 %ol
   - @channels.each do |name, _|
     %li

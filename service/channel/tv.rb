@@ -10,11 +10,11 @@ class Service::Tv
     open address
   end
 
-  private
-
   def stop_current
     Process.kill('INT', @vlc_pid) if @vlc_pid
   end
+
+  private
 
   def open(address)
     @vlc_pid = spawn("vlc #{address} --fullscreen")
